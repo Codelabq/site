@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="./JS/color-modes.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Ahmad Sheikh Khamis 🔥🔥">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title>CodeLab</title>
+  <link rel="stylesheet" href="./bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+  <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="icon" href="./Images/codelab.png" />
+  <link rel="stylesheet" href="./CSS/index file styling.css">
+  <link href="./CSS/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/animations.css">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+  <div class="dropdown position-fixed bottom-0 end-0 mb-5 me-3 bd-mode-toggle" style="display: none">
+    <button style="background: var(--bs-body-bg);border-color: #06c;display: none" class="btn py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)" style="background: #0066cc">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class=" bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <header class="header">
+    <div class="logo-head">
+      <a href="../../" class="logo" style="color: #fff;text-decoration: none;margin: auto"> <img src="./Images/codelab.png" alt="./Images/codelab.png" style="height: 34px"> CodeLab </a>
+    </div>
+    <div class="desktop-header">
+      <ul>
+        <li>
+          <a href="#codelab">
+            <i class="bi bi-house"></i>
+            CodeLab
+          </a>
+        </li>
+        <li>
+          <a href="#service">
+            <i class="bi bi-patch-check"></i>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#features">
+            <i class="bi bi-collection"></i>
+            Features
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <i class="bi bi-link-45deg"></i>
+            Connect
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bi bi-bag"></i>
+            Our Sites Store
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-header">
+      <div class="minu">
+        <div class="open-icon " style="margin-right: 1px">
+          <a href=""><i class="bi bi-github"></i></a>
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-envelope" style="margin-right: 10px"></i></a>
+          <i class="bi bi-filter-right" style="color: #fff;font-size: 30px;margin-right: 10px" id="open"></i>
+        </div>
+      </div>
+      <div class="list" id="list">
+        <div class="close-icon" id="close">
+          <i class="bi bi-x-lg"></i>
+        </div>
+        <div class="hidden-list">
+          <div>
+            <a href="#codelab" class="list-item">
+              <i class="bi bi-house"></i>
+              CodeLab .
+            </a>
+            <a href="#service" class="list-item">
+              <i class="bi bi-patch-check"></i>
+              Services .
+            </a>
+            <a href="#features" class="list-item">
+              <i class="bi bi-collection"></i>
+              Features .
+            </a>
+            <a href="#contact" class="list-item">
+              <i class="bi bi-link-45deg"></i>
+              Contact .
+            </a>
+            <a href="https://ask-ahmad.web.app" class="list-item">
+              <i class="bi bi-bag"></i>
+              Our Sites Store .
+            </a>
+            <br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <div class="heder-section">
+      <section class="header-section">
+        <h1><span>Code</span>Lab</h1>
+        <p>
+          We are a technology company that helps find open source spear solutions and create a range of applications that meet your needs with a safe and fast service for all requirements.
+          <button class="tryService">
+            <a href="#service"> Try Our Services </a>
+          </button>
+        </p>
+      </section>
+    </div><br><br>
+    <div class="bar" id="codelab">
+      <p> About CodeLab </p>
+    </div><br><br>
+    <p class="sec-dic" style="width: 90%">
+      Codelab is a technical company specialized in building various web applications.
+      <br><br>In addition to providing various protection services to users through an integrated team that serves all users every time .
+      <br><br>This company was founded in 2024 by software developer Ahmed Sheikh Khamis. We have an integrated team working all the time to receive requests from users.
+      <br><br>CodeLab is distinguished from other companies by the speed of their applications, and the after-sales service they provide, as all customers can redevelop their websites at excellent prices and it's suitable for everyone.
+      <br><br>We hope you like it. To contact us and follow us, you can use the media below :
+    </p><br>
+    <center>
+      <div class="minu">
+        <div class="open-icon ">
+          <a href=""><i class="bi bi-github"></i></a>
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-envelope" style="margin-right: 20px"></i></a>
+        </div>
+    </center>
+    </div>
+    <hr style="color: darkgrey"><br>
+    <div class="services-section">
+      <div class="bar" id="features">
+        <p>Why CodeLab ?</p>
+      </div><br><br>
+      <p class="sec-dic">
+        Our organization is characterized by high capabilities, performance and service that is commensurate with everyone , and this is some of them :</p>
+      <div class="features">
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-shield-lock" style="color: lime"></i></div>
+            <h3>Safe & Secure </h3>
+            <p>
+              At our software company, we prioritize the security of our clients' data and systems. We implement robust measures to protect your information and ensure the integrity of your digital assets.
+            </p>
+          </center>
+        </div>
+        <center>
+          <hr style="width: 75%;color: darkgrey">
+        </center>
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-suit-heart" style="color: hotpink"></i></div>
+            <h3>Friendly Service </h3>
+            <p>
+              Our dedicated team of professionals is committed to providing a personalized and friendly service experience. We strive to understand your unique needs and tailor our solutions to exceed your expectations.
+            </p>
+          </center>
+        </div>
+        <center>
+          <hr style="width: 75%;color: darkgrey">
+        </center>
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-lightning" style="color: red"></i></div>
+            <h3>Fast Performance</h3>
+            <p>
+              We believe in delivering fast-paced and responsive solutions that cater to the dynamic demands of the modern digital landscape. Our focus on optimized performance ensures your applications and systems run seamlessly.
+
+            </p>
+          </center>
+        </div>
+        <center>
+          <hr style="width: 75%;color: darkgrey">
+        </center>
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-cpu" style="color: #0080FFB3;margin-top: -2px;"></i></div>
+            <h3>Latest Technologies Usage</h3>
+            <p>
+              By staying at the forefront of technological advancements, we leverage the most cutting-edge tools and frameworks to develop innovative and future-proof solutions for our clients.
+
+            </p>
+          </center>
+        </div>
+        <div>
+          <center>
+            <hr style="width: 75%;color: darkgrey">
+          </center>
+        </div>
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-clock-history" style="color: #eee;margin-top: -2px"></i></div>
+            <h3>Fast Product Completion</h3>
+            <p>Our efficient and streamlined development process allows us to deliver comprehensive software products and services quickly, ensuring you can capitalize on emerging opportunities in a timely manner.</p>
+          </center>
+        </div>
+        <center>
+          <hr style="width: 75%;color: darkgrey">
+        </center>
+        <div>
+          <center>
+            <div class="ser-icon"><i class="bi bi-cart-check" style="color: teal;margin-top: -2px"></i></div>
+            <h3>After-sales Service</h3>
+            <p>Our efficient and streamlined development process allows us to deliver comprehensive software products and services quickly, ensuring you can capitalize on emerging opportunities in a timely manner.</p>
+          </center>
+        </div>
+        <center>
+          <hr style="width: 100%;color: darkgrey">
+        </center>
+      </div>
+      <div class="bar" id="service">
+        <p style="width: 205px;">CodeLab Services</p>
+      </div><br><br>
+      <p class="sec-dic">
+        We have many services that comply with the highest standards and use the latest and best tools to facilitate the software production process , and this is some of our services :
+      </p>
+      <div class="services">
+        <div class="ser-bg">
+          <div class="service">
+            <div class="service-header">
+              <i class="bi service-icon bi-code-square"></i>
+              <div class="service-name">
+                Front-end Development
+              </div>
+            </div>
+            <hr style="color: darkgray">
+            <div class="service-dics">
+              Our front-end experts craft exceptional user experiences through responsive designs, cutting-edge technologies, optimized performance, and meticulous attention to detail, ensuring your digital presence engages and delights your audience across all devices. </div>
+          </div>
+        </div>
+
+        <center>
+          <hr style="width: 80%;color: darkgrey">
+        </center>
+        <div class="ser-bg">
+          <div class="service">
+            <div class="service-header">
+              <i class="bi service-icon bi-server"></i>
+              <div class="service-name">
+                Back-end Development
+              </div>
+            </div>
+            <hr style="color: darkgray">
+            <div class="service-dics">
+              Our back-end engineers develop reliable, scalable, and secure server-side infrastructure using the latest technologies. We build high-performing systems that seamlessly integrate with your front-end for a cohesive user experience.</div>
+          </div>
+        </div>
+        <center>
+          <hr style="width: 80%;color: darkgrey">
+        </center>
+        <div class="ser-bg">
+          <div class="service">
+            <div class="service-header">
+              <i class="bi service-icon bi-phone"></i>
+              <div class="service-name">
+                PWA Applications
+              </div>
+            </div>
+            <hr style="color: darkgray">
+            <div class="service-dics">
+              Our mobile development team crafts intuitive and engaging native and cross-platform applications. By leveraging industry-leading tools and frameworks, we deliver secure, performant, and responsive mobile solutions tailored to your users' needs across iOS and Android devices.
+            </div>
+          </div>
+        </div>
+        <center>
+          <hr style="width: 80%;color: darkgrey">
+        </center>
+        <div class="ser-bg">
+          <div class="service">
+            <div class="service-header">
+              <i class="bi service-icon bi-shield-check"></i>
+              <div class="service-name">
+                Save Product Security
+              </div>
+            </div>
+            <hr style="color: darkgray">
+            <div class="service-dics">
+              We prioritize the security and privacy of your digital products. Our robust security measures, including encryption, access controls, and threat monitoring, protect your sensitive data and ensure compliance with industry regulations to instill trust in your users.
+            </div>
+          </div>
+        </div>
+        <hr style="color: darkgray">
+      </div>
+    </div><br>
+    <div class="bar" id="contact">
+      <p>Contact Us</p>
+    </div><br><br>
+    <p class="sec-dic">Connect with our team to discuss your website needs and open our innovative digital solutions. And let's start the process of building websites and get the best user experience.</p>
+
+    <section class="contact">
+      <form action="https://formsubmit.co/codelab67@gmail.com" method="POST" class="contact-form">
+        <input type="text" name="name" required placeholder="Enter Your name please ..." class="input">
+        <input type="email" name="email" required placeholder="Enter Your Email address ..." class="input">
+        <input type="hidden" name="_next" value="https://codlabq.github.io/codelab/index.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_subject" required placeholder="Create Website , PWA ... ( Recommend ) " class="input">
+        <input type="hidden" name="_template" value="table">
+        <div style="display: flex;align-items: center">
+          <textarea name="message" required placeholder="Message Content ..." class="textarea"></textarea>
+          <button class="send" type="submit"><i class="bi bi-cursor" style="rotate: 45deg;margin-top: -22px;margin-left: 5px"></i></button>
+        </div>
+      </form>
+    </section>
+
+    <br>
+    <div class="talk-sec">
+      <!-- Choose your plan to produce your own website.
+      -->
+      <div class="plans">
+        <div class="ai-plan">
+          <h1 style="font-size: 50px">100$</h1>
+          of the complete software with alot of features : <br>
+          <hr>
+          <div style="text-align: left;font-size: 13px">
+            1- Very fast performance more than other plan . <br>
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            2- Maximum time to complete the software is 1 Month . <br>
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            3- Unlimited site pages , so you can order a big website and it's completely perfect . <br>
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            4- You have a security guard for your software to make it completely protect.
+          </div>
+          <button class="try-plan">
+            <a href="">Try This Plan</a>
+          </button>
+        </div>
+        <div class="normal-plan">
+          <h1 style="font-size: 50px">50$</h1>
+          of the complete software with alot of features : <br>
+          <hr>
+          <div style="text-align: left;font-size: 13px">
+            1- Normal performance . <br>
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            2- Maximum time to complete the software is 40 Days . <br>
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            3- Limited site pages , so you can order a website no more 10 pages and if you want more for 1 page 1$. . <br>
+
+            <center>
+              <hr style="width: 80%;color: darkgrey">
+            </center>
+            4- You have a security guard for your software to make it completely protect . <br>
+
+          </div>
+          <button class="try-plan">
+            <a href="">Try This Plan</a>
+          </button>
+        </div>
+      </div>
+    </div><br>
+    <section class="">
+
+    </section>
+  </main>
+  <footer class="footer">
+  </footer>
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="./JS/main.js" type="module"></script>
+  <script src="./JS/dashboard.js"></script>
+  <script src="./JS/Components/footer.js"></script>
+  <script>
+    let list = document.getElementById('list');
+    let open = document.getElementById('open');
+    let close = document.getElementById('close');
+    let main = document.getElementById('main');
+    open.onclick = function() { list.style.marginLeft = '-0%' };
+    close.onclick = function() { list.style.marginLeft = '-60%' }
+    const form = document.getElementById('contact-form');
+  </script>
+</body>
+
+</html>
