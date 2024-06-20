@@ -228,6 +228,7 @@ let ar = [
   },
 
 ]
+
 let cont = document.querySelector('.other-topics')
 for (var i = 0; i < ar.length; i++) {
   cont.innerHTML += `
